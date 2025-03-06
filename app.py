@@ -12,7 +12,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # Set your Gemini API Key
-GEMINI_API_KEY = "AIzaSyCm3Q104ZTdaptEtlsUOuTrYip0Gyc5oQA"  # Replace with actual API key
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
 def decode_legal_text(legal_text):
     """Send legal text to Gemini for plain language simplification."""

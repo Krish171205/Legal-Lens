@@ -1,0 +1,8 @@
+Flask
+requests
+Werkzeug
+PyMuPDF
+python-docx
+pytesseract
+Pillow
+langdetect
