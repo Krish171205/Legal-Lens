@@ -3,7 +3,7 @@ Werkzeug
 PyMuPDF
 python-docx
 pytesseract
-Pillow
 langdetect
+Pillow
 pinecone-client
 sentence-transformers
