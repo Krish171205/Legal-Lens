@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LegalLens</title>
+</head>
+<body>
+  <h1>LegalLens</h1>
+  <form method="post" enctype="multipart/form-data">
+    <label>Upload document or paste text:</label><br>
+    <input type="file" name="file"><br>
+    <textarea name="legal_text" rows="5" cols="60" placeholder="Or paste legal text here"></textarea><br>
+    <button type="submit">Process</button>
+  </form>
+
+  {% if simplified_text %}
+    <h2>Simplified Text ({{ detected_language }})</h2>
+    <pre>{{ simplified_text }}</pre>
+    <form action="/ask" method="post">
+      <input type="text" name="question" placeholder="Ask a question">
+      <button type="submit">Ask</button>
+    </form>
+  {% endif %}
+
+  {% if chat_history %}
+    <h2>Chat History</h2>
+    <ul>
+      {% for qa in chat_history %}
+        <li><strong>You:</strong> {{ qa.question }}<br>
+            <strong>LegalLens:</strong> {{ qa.answer }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>

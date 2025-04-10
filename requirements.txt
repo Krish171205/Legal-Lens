@@ -1,8 +1,9 @@
 Flask
-requests
 Werkzeug
 PyMuPDF
 python-docx
 pytesseract
 Pillow
 langdetect
+pinecone-client
+sentence-transformers
